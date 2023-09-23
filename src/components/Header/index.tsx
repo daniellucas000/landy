@@ -1,9 +1,20 @@
-import LandyLogo from '../../img/svg/logo.svg';
+import { useState } from 'react';
+
 import { Button } from '../Button';
 
-import { HeaderContainer, HeaderWrapper, MenuContainer } from './styles';
+import { HeaderContainer, HeaderWrapper, MenuContainer } from './styled';
+import styles from './darkmode.module.css';
+import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
-export function Header() {
+import { MenuMobile } from '../MenuMobile';
+
+interface HeaderProps {
+  toggleTheme(): void;
+}
+
+export function Header({ toggleTheme }: HeaderProps) {
+  const [menuIsVisible, setMenuIsVisible] = useState(false);
+
   function scrollTo(id: string) {
     const element = document.getElementById(id);
     if (element) {
@@ -12,13 +23,32 @@ export function Header() {
   }
   return (
     <HeaderContainer id="header">
+      <MenuMobile
+        menuIsVisible={menuIsVisible}
+        setMenuIsVisible={setMenuIsVisible}
+      />
+
       <HeaderWrapper>
-        <a href="#">
-          <img src={LandyLogo} alt="Landy logo" width={101} height={64} />
-        </a>
+        <a href="#">Landy</a>
 
         <nav>
           <MenuContainer>
+            <li>
+              <div className={styles['container-only-for-centering']}>
+                <div className={styles['darkmode-toggle-wrapper']}>
+                  <input
+                    onClick={toggleTheme}
+                    type="checkbox"
+                    id="darkmode-toggle"
+                    aria-label="dark mode toggle"
+                    className={styles['darkmode-toggle-checkbox']}
+                  />
+                  <div className={styles['darkmode-toggle-circle']}></div>
+                  <span className={styles['darkmode-toggle-emoji']}>🌚</span>
+                  <span className={styles['darkmode-toggle-emoji']}>🌞</span>
+                </div>
+              </div>
+            </li>
             <li>
               <a onClick={() => scrollTo('about')} href="#">
                 About
@@ -33,6 +63,12 @@ export function Header() {
               <a href="#">Product</a>
             </li>
             <Button>Contact</Button>
+            <li>
+              <HiOutlineMenuAlt3
+                onClick={() => setMenuIsVisible(true)}
+                size={5}
+              />
+            </li>
           </MenuContainer>
         </nav>
       </HeaderWrapper>

@@ -9,6 +9,11 @@ export const InputContainer = styled('div')`
     display: block;
     padding-bottom: 10px;
     text-transform: capitalize;
+    color: ${(props) => props.theme.fontColor};
+
+    @media (max-width: 576px) {
+      text-align: left;
+    }
   }
 
   input {

@@ -21,7 +21,7 @@ export const FooterWrapper = styled('div')`
   }
 
   div ul li {
-    color: rgb(24, 33, 109);
+    color: ${(props) => props.theme.fontColor};
     font-size: 14px;
     width: 70%;
     margin-bottom: 5px;

@@ -32,12 +32,12 @@ export const GlobalStyle = createGlobalStyle`
         padding:0;
         border: 0;
         outline: 0;
-        background: #fff;
+        background: ${(props) => props.theme.body};
         overflow-x: hidden;
     }
 
     a:hover {
-        color: #18216d;
+        color: ${(props) => props.theme.fontColor};
         text-underline-position: under;
         text-decoration: underline wavy rgb(255, 130, 92);
     }
@@ -69,7 +69,7 @@ export const GlobalStyle = createGlobalStyle`
     h5,
     h6 {
         font-family: 'Motiva Sans Bold', serif;
-        color: #18216d;
+        color: ${(props) => props.theme.fontColor};
         font-size: 56px;
         line-height: 1.18;
 
@@ -83,7 +83,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     p {
-        color: #18216d;
+        color: ${(props) => props.theme.fontColor};
         font-size: 21px;        
         line-height: 1.41;
     }
@@ -95,10 +95,10 @@ export const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         outline: none;
-        color: #2E186A;
+        color: ${(props) => props.theme.fontColor};
 
         :hover {
-            color: #2e186a;
+            color: ${(props) => props.theme.fontColor};
         }
     }
     

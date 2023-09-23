@@ -5,6 +5,11 @@ export const ContentBlockContainer = styled('section')`
   grid-template-columns: 1fr 1fr;
   gap: 90px;
   padding: 10rem 0px;
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 `;
 
 export const LeftContentContainer = styled('section')`
@@ -14,6 +19,11 @@ export const LeftContentContainer = styled('section')`
   /* grid-template-columns: 1fr 1fr; */
   gap: 90px;
   padding: 10rem 0px;
+
+  @media (max-width: 576px) {
+    display: block;
+    text-align: center;
+  }
 
   div:nth-child(2) {
     width: 100%;
@@ -25,20 +35,24 @@ export const IntroContent = styled('div')`
 
   h3 {
     font-family: 'Motiva Sans Bold', serif;
-    color: rgb(24, 33, 109);
+    color: ${(props) => props.theme.fontColor};
     font-size: 56px;
     line-height: 1.18;
-    margin-bottom: 1.75rem;
   }
 
   p {
-    color: rgb(24, 33, 109);
+    color: ${(props) => props.theme.fontColor};
     font-size: 21px;
     line-height: 1.41;
+    margin: 1.75rem 0;
   }
 `;
 
 export const ButtonWrapper = styled('div')`
   display: flex;
   gap: 36px;
+
+  @media (max-width: 576px) {
+    justify-content: center;
+  }
 `;
