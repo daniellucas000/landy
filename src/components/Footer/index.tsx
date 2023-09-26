@@ -72,8 +72,8 @@ export function Footer() {
         <div>
           <h4>Language</h4>
           <ul>
-            <li>Language 1</li>
-            <li>Language 2</li>
+            <li>Lorem</li>
+            <li>Lorem</li>
           </ul>
         </div>
       </FooterWrapper>

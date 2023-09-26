@@ -19,6 +19,6 @@ export const ScrollUpContainer = styled('button')`
   border: none;
 
   &:hover {
-    background: rgb(224, 224, 224);
+    background: #a9abaf;
   }
 `;

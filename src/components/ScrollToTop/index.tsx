@@ -1,4 +1,4 @@
-import { SvgIcon } from '../SvgIcon';
+import { IoIosArrowUp } from 'react-icons/io';
 import { ScrollUpContainer } from './styled';
 
 function handleScroll() {
@@ -11,7 +11,7 @@ function handleScroll() {
 export function ScrollToTop() {
   return (
     <ScrollUpContainer onClick={handleScroll}>
-      <SvgIcon src="scroll-top.svg" width="20px" height="20px" />
+      <IoIosArrowUp size={20}/>
     </ScrollUpContainer>
   );
 }

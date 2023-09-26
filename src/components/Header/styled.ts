@@ -23,6 +23,15 @@ export const HeaderWrapper = styled('div')`
     font-size: 2.5rem;
     color: ${(props) => props.theme.fontColor};
   }
+
+  nav > svg {
+    display: none;
+
+    @media (max-width: 576px) {
+      display: block;
+      color: ${(props) => props.theme.fontColor};
+    }
+  }
 `;
 
 export const MenuContainer = styled('ul')`
@@ -42,13 +51,5 @@ export const MenuContainer = styled('ul')`
     color: ${(props) => props.theme.fontColor};
     transition: color 0.2s ease-in 0s;
     margin: 0 2rem;
-  }
-
-  li:last-child {
-    display: none;
-
-    @media (max-width: 576px) {
-      display: block;
-    }
   }
 `;

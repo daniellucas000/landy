@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled('footer')`
-  background: rgb(241, 242, 243);
+  background: ${(props) => props.theme.footerColor};
   padding: 2.5rem 0px;
 `;
 
@@ -29,7 +29,7 @@ export const FooterWrapper = styled('div')`
 
   div ul li a {
     font-size: 16px;
-    color: rgb(0, 0, 0);
+    color: ${(props) => props.theme.fontLinkFooter};
     cursor: pointer;
     text-transform: capitalize;
     line-height: 24px;

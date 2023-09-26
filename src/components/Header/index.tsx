@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import { HeaderContainer, HeaderWrapper, MenuContainer } from './styled';
 import styles from './darkmode.module.css';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 import { MenuMobile } from '../MenuMobile';
 
@@ -44,8 +45,12 @@ export function Header({ toggleTheme }: HeaderProps) {
                     className={styles['darkmode-toggle-checkbox']}
                   />
                   <div className={styles['darkmode-toggle-circle']}></div>
-                  <span className={styles['darkmode-toggle-emoji']}>🌚</span>
-                  <span className={styles['darkmode-toggle-emoji']}>🌞</span>
+                  <span className={styles['darkmode-toggle-emoji']}>
+                    <FiMoon />
+                  </span>
+                  <span className={styles['darkmode-toggle-emoji']}>
+                    <FiSun />
+                  </span>
                 </div>
               </div>
             </li>
@@ -63,13 +68,8 @@ export function Header({ toggleTheme }: HeaderProps) {
               <a href="#">Product</a>
             </li>
             <Button>Contact</Button>
-            <li>
-              <HiOutlineMenuAlt3
-                onClick={() => setMenuIsVisible(true)}
-                size={5}
-              />
-            </li>
           </MenuContainer>
+          <HiOutlineMenuAlt3 onClick={() => setMenuIsVisible(true)} size={35} />
         </nav>
       </HeaderWrapper>
     </HeaderContainer>

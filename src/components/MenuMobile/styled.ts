@@ -33,6 +33,8 @@ export const Container = styled('div')<visibleProps>`
     right: 1rem;
     transform: rotate(45deg);
     transition: 0.7s;
+
+    color: ${(props) => props.theme.fontColor};
   }
 
   ul {
@@ -56,6 +58,7 @@ export const Container = styled('div')<visibleProps>`
 
       nav {
         transform: scale(1);
+        width: 100%;
       }
     `}
 `;
