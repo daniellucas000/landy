@@ -7,7 +7,7 @@ interface SvgIconProps {
 export function SvgIcon({ src, width, height }: SvgIconProps) {
   return (
     <img
-      src={`/public/assets/svg/${src}`}
+      src={`src/assets/${src}`}
       alt={src}
       width={width}
       height={height}
