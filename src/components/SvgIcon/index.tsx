@@ -4,13 +4,6 @@ interface SvgIconProps {
   height: string;
 }
 
-export function SvgIcon({ src, width, height }: SvgIconProps) {
-  return (
-    <img
-      src={`./src/assets/${src}`}
-      alt={src}
-      width={width}
-      height={height}
-    />
-  );
-}
+export const SvgIcon = ({ src, width, height }: SvgIconProps) => (
+  <img src={`/img/svg/${src}`} alt={src} width={width} height={height} />
+);
