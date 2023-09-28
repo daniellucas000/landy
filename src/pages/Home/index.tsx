@@ -12,8 +12,6 @@ import { HomeContainer } from './styles';
 import { ContactForm } from '../../components/ContactForm';
 import { ScrollToTop } from '../../components/ScrollToTop';
 
-
-
 export function Home() {
   return (
     <HomeContainer>

@@ -11,6 +11,7 @@ export const TextAreaContainer = styled('div')`
     padding-bottom: 10px;
     text-transform: capitalize;
     text-transform: capitalize;
+    color: ${(props) => props.theme.fontColor};
   }
 
   textarea {
