@@ -13,4 +13,4 @@ export function SvgIcon({ src, width, height }: SvgIconProps) {
       height={height}
     />
   );
-}
+}''
