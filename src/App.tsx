@@ -28,7 +28,7 @@ export function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <Header toggleTheme={toggleTheme} />
+      <Header toggleTheme={toggleTheme} theme={theme} />
       <Home />
       <Footer />
       <GlobalStyle />

@@ -39,6 +39,11 @@ export const MenuContainer = styled('ul')`
   align-items: center;
   width: 100%;
 
+  li {
+    display: flex;
+    color: ${(props) => props.theme.fontColor};
+  }
+
   li,
   button {
     @media (max-width: 576px) {

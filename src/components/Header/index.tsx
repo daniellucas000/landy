@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Button } from '../Button';
 
 import { HeaderContainer, HeaderWrapper, MenuContainer } from './styled';
-import styles from './darkmode.module.css';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
@@ -11,9 +10,10 @@ import { MenuMobile } from '../MenuMobile';
 
 interface HeaderProps {
   toggleTheme(): void;
+  theme: string;
 }
 
-export function Header({ toggleTheme }: HeaderProps) {
+export function Header({ toggleTheme, theme }: HeaderProps) {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
 
   function scrollTo(id: string) {
@@ -35,24 +35,11 @@ export function Header({ toggleTheme }: HeaderProps) {
         <nav>
           <MenuContainer>
             <li>
-              <div className={styles['container-only-for-centering']}>
-                <div className={styles['darkmode-toggle-wrapper']}>
-                  <input
-                    onClick={toggleTheme}
-                    type="checkbox"
-                    id="darkmode-toggle"
-                    aria-label="dark mode toggle"
-                    className={styles['darkmode-toggle-checkbox']}
-                  />
-                  <div className={styles['darkmode-toggle-circle']}></div>
-                  <span className={styles['darkmode-toggle-emoji']}>
-                    <FiMoon />
-                  </span>
-                  <span className={styles['darkmode-toggle-emoji']}>
-                    <FiSun />
-                  </span>
-                </div>
-              </div>
+              {theme === 'light' ? (
+                <FiSun size={28} onClick={toggleTheme} />
+              ) : (
+                <FiMoon size={28} onClick={toggleTheme} />
+              )}
             </li>
             <li>
               <a onClick={() => scrollTo('about')} href="#">
